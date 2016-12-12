@@ -1,0 +1,937 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9AACC34F5A97D02FED093C30 /* Pods_BingeEating.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B557EE5D3DA24C4CB94CCADE /* Pods_BingeEating.framework */; };
+		ED02197B1DF0D278005D15FF /* WeeklyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02197A1DF0D278005D15FF /* WeeklyListTableViewController.swift */; };
+		ED02197D1DF0E249005D15FF /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED02197C1DF0E249005D15FF /* NotesViewController.swift */; };
+		ED07C0101DEF7CDD008542F4 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0081DEF7CDD008542F4 /* Duration.swift */; };
+		ED07C0111DEF7CDD008542F4 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0091DEF7CDD008542F4 /* Int+Timepiece.swift */; };
+		ED07C0121DEF7CDD008542F4 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C00A1DEF7CDD008542F4 /* NSCalendar+Timepiece.swift */; };
+		ED07C0131DEF7CDD008542F4 /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C00B1DEF7CDD008542F4 /* NSDate+Timepiece.swift */; };
+		ED07C0141DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C00C1DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift */; };
+		ED07C0151DEF7CDD008542F4 /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C00D1DEF7CDD008542F4 /* String+Timepiece.swift */; };
+		ED07C0161DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED07C00E1DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard */; };
+		ED07C0171DEF7CDD008542F4 /* WWCalendarTimeSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C00F1DEF7CDD008542F4 /* WWCalendarTimeSelector.swift */; };
+		ED07C01C1DEFAD89008542F4 /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0191DEFAD88008542F4 /* MBCircularProgressBarLayer.m */; };
+		ED07C01D1DEFAD89008542F4 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = ED07C01B1DEFAD88008542F4 /* MBCircularProgressBarView.m */; };
+		ED07C01F1DF09536008542F4 /* WeeklyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C01E1DF09536008542F4 /* WeeklyLog.swift */; };
+		ED07C0221DF09B2F008542F4 /* CommonFieldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0201DF09B2F008542F4 /* CommonFieldTableCell.swift */; };
+		ED07C0231DF09B2F008542F4 /* CommonFieldTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */; };
+		ED07C0271DF0B65C008542F4 /* WeeklyLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0261DF0B65C008542F4 /* WeeklyLogViewController.swift */; };
+		ED07C0291DF0BAAD008542F4 /* BEPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0281DF0BAAD008542F4 /* BEPurpleButton.swift */; };
+		ED71B99D1DCBD6C3007040E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */; };
+		ED71B99F1DCBD6C3007040E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99E1DCBD6C3007040E4 /* ViewController.swift */; };
+		ED71B9A21DCBD6C3007040E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71B9A01DCBD6C3007040E4 /* Main.storyboard */; };
+		ED71B9A41DCBD6C3007040E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED71B9A31DCBD6C3007040E4 /* Assets.xcassets */; };
+		ED71B9A71DCBD6C3007040E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71B9A51DCBD6C3007040E4 /* LaunchScreen.storyboard */; };
+		ED71B9B21DCBD6C3007040E4 /* BingeEatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B9B11DCBD6C3007040E4 /* BingeEatingTests.swift */; };
+		ED71B9BD1DCBD6C3007040E4 /* BingeEatingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B9BC1DCBD6C3007040E4 /* BingeEatingUITests.swift */; };
+		ED71B9CB1DCBDAD7007040E4 /* BETextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B9CA1DCBDAD7007040E4 /* BETextfield.swift */; };
+		ED71B9CD1DCBDCA4007040E4 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B9CC1DCBDCA4007040E4 /* Utility.swift */; };
+		EDA652EB1DECCF00001427A7 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA652EA1DECCF00001427A7 /* UserNotifications.framework */; };
+		EDB2E55F1DFDF28F006F7F7D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB2E55E1DFDF28E006F7F7D /* User.swift */; };
+		EDC819C01DF3C20300A88E5C /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC819BF1DF3C20300A88E5C /* PopAnimator.swift */; };
+		EDC819C21DF4AD8C00A88E5C /* BECommonField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC819C11DF4AD8C00A88E5C /* BECommonField.swift */; };
+		EDC819C41DF617A400A88E5C /* CustomActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC819C31DF617A400A88E5C /* CustomActivityIndicator.swift */; };
+		EDD7D1041DFE09640014B33A /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD7D1031DFE09640014B33A /* NotesDetailViewController.swift */; };
+		EDE0CA281DD3DB62005C0635 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA271DD3DB62005C0635 /* NetworkManager.swift */; };
+		EDE0CA2A1DD3E251005C0635 /* DailyLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA291DD3E251005C0635 /* DailyLog.swift */; };
+		EDE0CA2D1DD3F922005C0635 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA2C1DD3F922005C0635 /* PickerTableViewCell.swift */; };
+		EDE0CA2F1DD3FDD8005C0635 /* FieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA2E1DD3FDD8005C0635 /* FieldTableViewCell.swift */; };
+		EDE0CA311DD3FDE4005C0635 /* BoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA301DD3FDE4005C0635 /* BoolTableViewCell.swift */; };
+		EDE0CA331DD3FE09005C0635 /* LogItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA321DD3FE09005C0635 /* LogItemTableViewController.swift */; };
+		EDE0CA351DD3FF88005C0635 /* LogQuestions.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDE0CA341DD3FF88005C0635 /* LogQuestions.plist */; };
+		EDE0CA371DD405AF005C0635 /* AreaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA361DD405AF005C0635 /* AreaTableViewCell.swift */; };
+		EDE0CA3E1DD4DC66005C0635 /* TimePickerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA3C1DD4DC66005C0635 /* TimePickerTableCell.swift */; };
+		EDE0CA3F1DD4DC66005C0635 /* TimePickerTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE0CA3D1DD4DC66005C0635 /* TimePickerTableCell.xib */; };
+		EDE0CA421DD4DC7A005C0635 /* TextAreaTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA401DD4DC7A005C0635 /* TextAreaTableCell.swift */; };
+		EDE0CA431DD4DC7A005C0635 /* TextAreaTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE0CA411DD4DC7A005C0635 /* TextAreaTableCell.xib */; };
+		EDE0CA451DD4DF20005C0635 /* PhysicalActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA441DD4DF20005C0635 /* PhysicalActivityViewController.swift */; };
+		EDE0CA471DD4ED72005C0635 /* DailyLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA461DD4ED72005C0635 /* DailyLogViewController.swift */; };
+		EDE0CA491DD4EE7A005C0635 /* LogSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA481DD4EE7A005C0635 /* LogSummaryViewController.swift */; };
+		EDE0CA501DD4F08E005C0635 /* PhysicalItemTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA4E1DD4F08E005C0635 /* PhysicalItemTableCell.swift */; };
+		EDE0CA511DD4F08E005C0635 /* PhysicalItemTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDE0CA4F1DD4F08E005C0635 /* PhysicalItemTableCell.xib */; };
+		EDE0CA531DD52085005C0635 /* AppoinmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA521DD52085005C0635 /* AppoinmentsTableViewController.swift */; };
+		EDE0CA551DD5212D005C0635 /* AppointmentTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA541DD5212D005C0635 /* AppointmentTableCell.swift */; };
+		EDE0CA571DD52393005C0635 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA561DD52393005C0635 /* ProgressViewController.swift */; };
+		EDE0CA591DD54C91005C0635 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE0CA581DD54C91005C0635 /* AddPhotoViewController.swift */; };
+		EDE8E0181DCBE9010099F028 /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8E0171DCBE9010099F028 /* QuestionLabel.swift */; };
+		EDE8E01C1DCC0CEF0099F028 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDE8E01B1DCC0CEF0099F028 /* SWRevealViewController.m */; };
+		EDE8E01E1DCC0DFA0099F028 /* RearViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8E01D1DCC0DFA0099F028 /* RearViewController.swift */; };
+		EDE8E0201DCC0E960099F028 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE8E01F1DCC0E960099F028 /* HomeViewController.swift */; };
+		EDF62ABF1DF0C3D000917718 /* WeeklyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = EDF62ABE1DF0C3D000917718 /* WeeklyInfo.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED71B9AE1DCBD6C3007040E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED71B9911DCBD6C3007040E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED71B9981DCBD6C3007040E4;
+			remoteInfo = BingeEating;
+		};
+		ED71B9B91DCBD6C3007040E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED71B9911DCBD6C3007040E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED71B9981DCBD6C3007040E4;
+			remoteInfo = BingeEating;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6AEEF307225A8906582EEDCE /* Pods-BingeEating.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingeEating.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingeEating/Pods-BingeEating.release.xcconfig"; sourceTree = "<group>"; };
+		B557EE5D3DA24C4CB94CCADE /* Pods_BingeEating.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingeEating.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4A25B1D3752B0E7590376A4 /* Pods-BingeEating.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingeEating.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingeEating/Pods-BingeEating.debug.xcconfig"; sourceTree = "<group>"; };
+		ED02197A1DF0D278005D15FF /* WeeklyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyListTableViewController.swift; sourceTree = "<group>"; };
+		ED02197C1DF0E249005D15FF /* NotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		ED07C0081DEF7CDD008542F4 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		ED07C0091DEF7CDD008542F4 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
+		ED07C00A1DEF7CDD008542F4 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		ED07C00B1DEF7CDD008542F4 /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		ED07C00C1DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		ED07C00D1DEF7CDD008542F4 /* String+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Timepiece.swift"; sourceTree = "<group>"; };
+		ED07C00E1DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WWCalendarTimeSelector.storyboard; sourceTree = "<group>"; };
+		ED07C00F1DEF7CDD008542F4 /* WWCalendarTimeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WWCalendarTimeSelector.swift; sourceTree = "<group>"; };
+		ED07C0181DEFAD88008542F4 /* MBCircularProgressBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarLayer.h; path = "../../../../Downloads/MBCircularProgressBar-master/Pod/Classes/MBCircularProgressBarLayer.h"; sourceTree = "<group>"; };
+		ED07C0191DEFAD88008542F4 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarLayer.m; path = "../../../../Downloads/MBCircularProgressBar-master/Pod/Classes/MBCircularProgressBarLayer.m"; sourceTree = "<group>"; };
+		ED07C01A1DEFAD88008542F4 /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBCircularProgressBarView.h; path = "../../../../Downloads/MBCircularProgressBar-master/Pod/Classes/MBCircularProgressBarView.h"; sourceTree = "<group>"; };
+		ED07C01B1DEFAD88008542F4 /* MBCircularProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCircularProgressBarView.m; path = "../../../../Downloads/MBCircularProgressBar-master/Pod/Classes/MBCircularProgressBarView.m"; sourceTree = "<group>"; };
+		ED07C01E1DF09536008542F4 /* WeeklyLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyLog.swift; sourceTree = "<group>"; };
+		ED07C0201DF09B2F008542F4 /* CommonFieldTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonFieldTableCell.swift; sourceTree = "<group>"; };
+		ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonFieldTableCell.xib; sourceTree = "<group>"; };
+		ED07C0261DF0B65C008542F4 /* WeeklyLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyLogViewController.swift; sourceTree = "<group>"; };
+		ED07C0281DF0BAAD008542F4 /* BEPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEPurpleButton.swift; sourceTree = "<group>"; };
+		ED71B9991DCBD6C3007040E4 /* BingeEating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingeEating.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED71B99E1DCBD6C3007040E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ED71B9A11DCBD6C3007040E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED71B9A31DCBD6C3007040E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED71B9A61DCBD6C3007040E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED71B9A81DCBD6C3007040E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED71B9AD1DCBD6C3007040E4 /* BingeEatingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BingeEatingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED71B9B11DCBD6C3007040E4 /* BingeEatingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingeEatingTests.swift; sourceTree = "<group>"; };
+		ED71B9B31DCBD6C3007040E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED71B9B81DCBD6C3007040E4 /* BingeEatingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BingeEatingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED71B9BC1DCBD6C3007040E4 /* BingeEatingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BingeEatingUITests.swift; sourceTree = "<group>"; };
+		ED71B9BE1DCBD6C3007040E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED71B9CA1DCBDAD7007040E4 /* BETextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BETextfield.swift; sourceTree = "<group>"; };
+		ED71B9CC1DCBDCA4007040E4 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		EDA652E91DECCE8D001427A7 /* BingeEating.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BingeEating.entitlements; sourceTree = "<group>"; };
+		EDA652EA1DECCF00001427A7 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		EDB2E55E1DFDF28E006F7F7D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EDC819BF1DF3C20300A88E5C /* PopAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
+		EDC819C11DF4AD8C00A88E5C /* BECommonField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BECommonField.swift; sourceTree = "<group>"; };
+		EDC819C31DF617A400A88E5C /* CustomActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActivityIndicator.swift; sourceTree = "<group>"; };
+		EDD7D1031DFE09640014B33A /* NotesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesDetailViewController.swift; sourceTree = "<group>"; };
+		EDE0CA271DD3DB62005C0635 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		EDE0CA291DD3E251005C0635 /* DailyLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLog.swift; sourceTree = "<group>"; };
+		EDE0CA2C1DD3F922005C0635 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		EDE0CA2E1DD3FDD8005C0635 /* FieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldTableViewCell.swift; sourceTree = "<group>"; };
+		EDE0CA301DD3FDE4005C0635 /* BoolTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTableViewCell.swift; sourceTree = "<group>"; };
+		EDE0CA321DD3FE09005C0635 /* LogItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogItemTableViewController.swift; sourceTree = "<group>"; };
+		EDE0CA341DD3FF88005C0635 /* LogQuestions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LogQuestions.plist; sourceTree = "<group>"; };
+		EDE0CA361DD405AF005C0635 /* AreaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaTableViewCell.swift; sourceTree = "<group>"; };
+		EDE0CA3C1DD4DC66005C0635 /* TimePickerTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerTableCell.swift; sourceTree = "<group>"; };
+		EDE0CA3D1DD4DC66005C0635 /* TimePickerTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimePickerTableCell.xib; sourceTree = "<group>"; };
+		EDE0CA401DD4DC7A005C0635 /* TextAreaTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextAreaTableCell.swift; sourceTree = "<group>"; };
+		EDE0CA411DD4DC7A005C0635 /* TextAreaTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextAreaTableCell.xib; sourceTree = "<group>"; };
+		EDE0CA441DD4DF20005C0635 /* PhysicalActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalActivityViewController.swift; sourceTree = "<group>"; };
+		EDE0CA461DD4ED72005C0635 /* DailyLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyLogViewController.swift; sourceTree = "<group>"; };
+		EDE0CA481DD4EE7A005C0635 /* LogSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSummaryViewController.swift; sourceTree = "<group>"; };
+		EDE0CA4E1DD4F08E005C0635 /* PhysicalItemTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalItemTableCell.swift; sourceTree = "<group>"; };
+		EDE0CA4F1DD4F08E005C0635 /* PhysicalItemTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhysicalItemTableCell.xib; sourceTree = "<group>"; };
+		EDE0CA521DD52085005C0635 /* AppoinmentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppoinmentsTableViewController.swift; sourceTree = "<group>"; };
+		EDE0CA541DD5212D005C0635 /* AppointmentTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentTableCell.swift; sourceTree = "<group>"; };
+		EDE0CA561DD52393005C0635 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		EDE0CA581DD54C91005C0635 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		EDE8E0171DCBE9010099F028 /* QuestionLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
+		EDE8E0191DCC0CEE0099F028 /* BingeEating-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingeEating-Bridging-Header.h"; sourceTree = "<group>"; };
+		EDE8E01A1DCC0CEF0099F028 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		EDE8E01B1DCC0CEF0099F028 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		EDE8E01D1DCC0DFA0099F028 /* RearViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearViewController.swift; sourceTree = "<group>"; };
+		EDE8E01F1DCC0E960099F028 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EDF62ABE1DF0C3D000917718 /* WeeklyInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WeeklyInfo.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED71B9961DCBD6C3007040E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDA652EB1DECCF00001427A7 /* UserNotifications.framework in Frameworks */,
+				9AACC34F5A97D02FED093C30 /* Pods_BingeEating.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9AA1DCBD6C3007040E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9B51DCBD6C3007040E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78B14A438C7B1B6E75D03CCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4A25B1D3752B0E7590376A4 /* Pods-BingeEating.debug.xcconfig */,
+				6AEEF307225A8906582EEDCE /* Pods-BingeEating.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		81367679E56BFC0922B86F24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDA652EA1DECCF00001427A7 /* UserNotifications.framework */,
+				B557EE5D3DA24C4CB94CCADE /* Pods_BingeEating.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED07C0071DEF7CDD008542F4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				ED07C0081DEF7CDD008542F4 /* Duration.swift */,
+				ED07C0091DEF7CDD008542F4 /* Int+Timepiece.swift */,
+				ED07C00A1DEF7CDD008542F4 /* NSCalendar+Timepiece.swift */,
+				ED07C00B1DEF7CDD008542F4 /* NSDate+Timepiece.swift */,
+				ED07C00C1DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift */,
+				ED07C00D1DEF7CDD008542F4 /* String+Timepiece.swift */,
+				ED07C00E1DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard */,
+				ED07C00F1DEF7CDD008542F4 /* WWCalendarTimeSelector.swift */,
+			);
+			name = Sources;
+			path = "../../../../Downloads/WWCalendarTimeSelector-master/Sources";
+			sourceTree = "<group>";
+		};
+		ED71B9901DCBD6C3007040E4 = {
+			isa = PBXGroup;
+			children = (
+				ED71B99B1DCBD6C3007040E4 /* BingeEating */,
+				ED71B9B01DCBD6C3007040E4 /* BingeEatingTests */,
+				ED71B9BB1DCBD6C3007040E4 /* BingeEatingUITests */,
+				ED71B99A1DCBD6C3007040E4 /* Products */,
+				78B14A438C7B1B6E75D03CCA /* Pods */,
+				81367679E56BFC0922B86F24 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ED71B99A1DCBD6C3007040E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED71B9991DCBD6C3007040E4 /* BingeEating.app */,
+				ED71B9AD1DCBD6C3007040E4 /* BingeEatingTests.xctest */,
+				ED71B9B81DCBD6C3007040E4 /* BingeEatingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED71B99B1DCBD6C3007040E4 /* BingeEating */ = {
+			isa = PBXGroup;
+			children = (
+				EDA652E91DECCE8D001427A7 /* BingeEating.entitlements */,
+				ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */,
+				EDE0CA2B1DD3E25A005C0635 /* Models */,
+				EDE0CA241DD3D93E005C0635 /* Storyboards */,
+				EDE0CA261DD3D952005C0635 /* Controllers */,
+				EDE0CA251DD3D94A005C0635 /* Views */,
+				EDE0CA231DD3D931005C0635 /* Supporting Files */,
+				EDE0CA221DD3D924005C0635 /* Resources */,
+			);
+			path = BingeEating;
+			sourceTree = "<group>";
+		};
+		ED71B9B01DCBD6C3007040E4 /* BingeEatingTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED71B9B11DCBD6C3007040E4 /* BingeEatingTests.swift */,
+				ED71B9B31DCBD6C3007040E4 /* Info.plist */,
+			);
+			path = BingeEatingTests;
+			sourceTree = "<group>";
+		};
+		ED71B9BB1DCBD6C3007040E4 /* BingeEatingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ED71B9BC1DCBD6C3007040E4 /* BingeEatingUITests.swift */,
+				ED71B9BE1DCBD6C3007040E4 /* Info.plist */,
+			);
+			path = BingeEatingUITests;
+			sourceTree = "<group>";
+		};
+		EDC819C51DF628EE00A88E5C /* Daily Log */ = {
+			isa = PBXGroup;
+			children = (
+				EDE0CA461DD4ED72005C0635 /* DailyLogViewController.swift */,
+				EDE0CA481DD4EE7A005C0635 /* LogSummaryViewController.swift */,
+				EDE0CA441DD4DF20005C0635 /* PhysicalActivityViewController.swift */,
+				EDE0CA321DD3FE09005C0635 /* LogItemTableViewController.swift */,
+				EDE0CA581DD54C91005C0635 /* AddPhotoViewController.swift */,
+			);
+			name = "Daily Log";
+			sourceTree = "<group>";
+		};
+		EDC819C61DF6290000A88E5C /* Weekly Log */ = {
+			isa = PBXGroup;
+			children = (
+				ED02197A1DF0D278005D15FF /* WeeklyListTableViewController.swift */,
+				ED07C0261DF0B65C008542F4 /* WeeklyLogViewController.swift */,
+			);
+			name = "Weekly Log";
+			sourceTree = "<group>";
+		};
+		EDC819C71DF6294F00A88E5C /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ED07C0201DF09B2F008542F4 /* CommonFieldTableCell.swift */,
+				EDE0CA541DD5212D005C0635 /* AppointmentTableCell.swift */,
+				EDE0CA4E1DD4F08E005C0635 /* PhysicalItemTableCell.swift */,
+				EDE0CA3C1DD4DC66005C0635 /* TimePickerTableCell.swift */,
+				EDE0CA401DD4DC7A005C0635 /* TextAreaTableCell.swift */,
+				EDE0CA361DD405AF005C0635 /* AreaTableViewCell.swift */,
+				EDE0CA2E1DD3FDD8005C0635 /* FieldTableViewCell.swift */,
+				EDE0CA301DD3FDE4005C0635 /* BoolTableViewCell.swift */,
+				EDE0CA2C1DD3F922005C0635 /* PickerTableViewCell.swift */,
+			);
+			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		EDE0CA221DD3D924005C0635 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDF62ABE1DF0C3D000917718 /* WeeklyInfo.plist */,
+				ED07C0181DEFAD88008542F4 /* MBCircularProgressBarLayer.h */,
+				ED07C0191DEFAD88008542F4 /* MBCircularProgressBarLayer.m */,
+				ED07C01A1DEFAD88008542F4 /* MBCircularProgressBarView.h */,
+				ED07C01B1DEFAD88008542F4 /* MBCircularProgressBarView.m */,
+				ED07C0071DEF7CDD008542F4 /* Sources */,
+				EDE0CA341DD3FF88005C0635 /* LogQuestions.plist */,
+				ED71B9A31DCBD6C3007040E4 /* Assets.xcassets */,
+				ED71B9A81DCBD6C3007040E4 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		EDE0CA231DD3D931005C0635 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED71B9CC1DCBDCA4007040E4 /* Utility.swift */,
+				EDE8E01A1DCC0CEF0099F028 /* SWRevealViewController.h */,
+				EDE8E01B1DCC0CEF0099F028 /* SWRevealViewController.m */,
+				EDE8E0191DCC0CEE0099F028 /* BingeEating-Bridging-Header.h */,
+				EDE0CA271DD3DB62005C0635 /* NetworkManager.swift */,
+				EDC819C31DF617A400A88E5C /* CustomActivityIndicator.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EDE0CA241DD3D93E005C0635 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				ED71B9A01DCBD6C3007040E4 /* Main.storyboard */,
+				ED71B9A51DCBD6C3007040E4 /* LaunchScreen.storyboard */,
+				EDE0CA3D1DD4DC66005C0635 /* TimePickerTableCell.xib */,
+				EDE0CA411DD4DC7A005C0635 /* TextAreaTableCell.xib */,
+				ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */,
+				EDE0CA4F1DD4F08E005C0635 /* PhysicalItemTableCell.xib */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		EDE0CA251DD3D94A005C0635 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EDC819C71DF6294F00A88E5C /* Table Cells */,
+				EDC819C11DF4AD8C00A88E5C /* BECommonField.swift */,
+				ED07C0281DF0BAAD008542F4 /* BEPurpleButton.swift */,
+				EDE8E0171DCBE9010099F028 /* QuestionLabel.swift */,
+				ED71B9CA1DCBDAD7007040E4 /* BETextfield.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EDE0CA261DD3D952005C0635 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDC819C51DF628EE00A88E5C /* Daily Log */,
+				EDC819C61DF6290000A88E5C /* Weekly Log */,
+				EDE0CA521DD52085005C0635 /* AppoinmentsTableViewController.swift */,
+				EDC819BF1DF3C20300A88E5C /* PopAnimator.swift */,
+				EDE8E01F1DCC0E960099F028 /* HomeViewController.swift */,
+				EDE0CA561DD52393005C0635 /* ProgressViewController.swift */,
+				ED71B99E1DCBD6C3007040E4 /* ViewController.swift */,
+				EDE8E01D1DCC0DFA0099F028 /* RearViewController.swift */,
+				ED02197C1DF0E249005D15FF /* NotesViewController.swift */,
+				EDD7D1031DFE09640014B33A /* NotesDetailViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EDE0CA2B1DD3E25A005C0635 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDE0CA291DD3E251005C0635 /* DailyLog.swift */,
+				ED07C01E1DF09536008542F4 /* WeeklyLog.swift */,
+				EDB2E55E1DFDF28E006F7F7D /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED71B9981DCBD6C3007040E4 /* BingeEating */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED71B9C11DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEating" */;
+			buildPhases = (
+				24323274075CAEF7B3EB0FA9 /* [CP] Check Pods Manifest.lock */,
+				ED71B9951DCBD6C3007040E4 /* Sources */,
+				ED71B9961DCBD6C3007040E4 /* Frameworks */,
+				ED71B9971DCBD6C3007040E4 /* Resources */,
+				110CD6545A29D505348443B8 /* [CP] Embed Pods Frameworks */,
+				1A5115882EC2D3F60D9A5DCC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BingeEating;
+			productName = BingeEating;
+			productReference = ED71B9991DCBD6C3007040E4 /* BingeEating.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED71B9AC1DCBD6C3007040E4 /* BingeEatingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED71B9C41DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEatingTests" */;
+			buildPhases = (
+				ED71B9A91DCBD6C3007040E4 /* Sources */,
+				ED71B9AA1DCBD6C3007040E4 /* Frameworks */,
+				ED71B9AB1DCBD6C3007040E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED71B9AF1DCBD6C3007040E4 /* PBXTargetDependency */,
+			);
+			name = BingeEatingTests;
+			productName = BingeEatingTests;
+			productReference = ED71B9AD1DCBD6C3007040E4 /* BingeEatingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ED71B9B71DCBD6C3007040E4 /* BingeEatingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED71B9C71DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEatingUITests" */;
+			buildPhases = (
+				ED71B9B41DCBD6C3007040E4 /* Sources */,
+				ED71B9B51DCBD6C3007040E4 /* Frameworks */,
+				ED71B9B61DCBD6C3007040E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED71B9BA1DCBD6C3007040E4 /* PBXTargetDependency */,
+			);
+			name = BingeEatingUITests;
+			productName = BingeEatingUITests;
+			productReference = ED71B9B81DCBD6C3007040E4 /* BingeEatingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED71B9911DCBD6C3007040E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = uncc;
+				TargetAttributes = {
+					ED71B9981DCBD6C3007040E4 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7R8U9B2AP5;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					ED71B9AC1DCBD6C3007040E4 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7R8U9B2AP5;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED71B9981DCBD6C3007040E4;
+					};
+					ED71B9B71DCBD6C3007040E4 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 7R8U9B2AP5;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = ED71B9981DCBD6C3007040E4;
+					};
+				};
+			};
+			buildConfigurationList = ED71B9941DCBD6C3007040E4 /* Build configuration list for PBXProject "BingeEating" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED71B9901DCBD6C3007040E4;
+			productRefGroup = ED71B99A1DCBD6C3007040E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED71B9981DCBD6C3007040E4 /* BingeEating */,
+				ED71B9AC1DCBD6C3007040E4 /* BingeEatingTests */,
+				ED71B9B71DCBD6C3007040E4 /* BingeEatingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED71B9971DCBD6C3007040E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED07C0161DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard in Resources */,
+				ED07C0231DF09B2F008542F4 /* CommonFieldTableCell.xib in Resources */,
+				ED71B9A71DCBD6C3007040E4 /* LaunchScreen.storyboard in Resources */,
+				EDE0CA3F1DD4DC66005C0635 /* TimePickerTableCell.xib in Resources */,
+				EDE0CA351DD3FF88005C0635 /* LogQuestions.plist in Resources */,
+				EDF62ABF1DF0C3D000917718 /* WeeklyInfo.plist in Resources */,
+				ED71B9A41DCBD6C3007040E4 /* Assets.xcassets in Resources */,
+				EDE0CA431DD4DC7A005C0635 /* TextAreaTableCell.xib in Resources */,
+				EDE0CA511DD4F08E005C0635 /* PhysicalItemTableCell.xib in Resources */,
+				ED71B9A21DCBD6C3007040E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9AB1DCBD6C3007040E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9B61DCBD6C3007040E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		110CD6545A29D505348443B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingeEating/Pods-BingeEating-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A5115882EC2D3F60D9A5DCC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingeEating/Pods-BingeEating-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		24323274075CAEF7B3EB0FA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED71B9951DCBD6C3007040E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDE0CA281DD3DB62005C0635 /* NetworkManager.swift in Sources */,
+				EDE0CA371DD405AF005C0635 /* AreaTableViewCell.swift in Sources */,
+				EDE0CA501DD4F08E005C0635 /* PhysicalItemTableCell.swift in Sources */,
+				EDE0CA571DD52393005C0635 /* ProgressViewController.swift in Sources */,
+				ED07C0151DEF7CDD008542F4 /* String+Timepiece.swift in Sources */,
+				EDC819C01DF3C20300A88E5C /* PopAnimator.swift in Sources */,
+				ED07C0121DEF7CDD008542F4 /* NSCalendar+Timepiece.swift in Sources */,
+				EDE8E01C1DCC0CEF0099F028 /* SWRevealViewController.m in Sources */,
+				EDE0CA471DD4ED72005C0635 /* DailyLogViewController.swift in Sources */,
+				EDE0CA2F1DD3FDD8005C0635 /* FieldTableViewCell.swift in Sources */,
+				EDE0CA591DD54C91005C0635 /* AddPhotoViewController.swift in Sources */,
+				EDE0CA531DD52085005C0635 /* AppoinmentsTableViewController.swift in Sources */,
+				EDE0CA2D1DD3F922005C0635 /* PickerTableViewCell.swift in Sources */,
+				ED07C0291DF0BAAD008542F4 /* BEPurpleButton.swift in Sources */,
+				EDE0CA331DD3FE09005C0635 /* LogItemTableViewController.swift in Sources */,
+				ED07C01C1DEFAD89008542F4 /* MBCircularProgressBarLayer.m in Sources */,
+				ED07C0221DF09B2F008542F4 /* CommonFieldTableCell.swift in Sources */,
+				ED07C0131DEF7CDD008542F4 /* NSDate+Timepiece.swift in Sources */,
+				ED07C0271DF0B65C008542F4 /* WeeklyLogViewController.swift in Sources */,
+				ED02197B1DF0D278005D15FF /* WeeklyListTableViewController.swift in Sources */,
+				EDE0CA2A1DD3E251005C0635 /* DailyLog.swift in Sources */,
+				ED07C0171DEF7CDD008542F4 /* WWCalendarTimeSelector.swift in Sources */,
+				EDE0CA491DD4EE7A005C0635 /* LogSummaryViewController.swift in Sources */,
+				ED07C01F1DF09536008542F4 /* WeeklyLog.swift in Sources */,
+				EDC819C21DF4AD8C00A88E5C /* BECommonField.swift in Sources */,
+				ED71B9CD1DCBDCA4007040E4 /* Utility.swift in Sources */,
+				ED07C0141DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift in Sources */,
+				EDE0CA451DD4DF20005C0635 /* PhysicalActivityViewController.swift in Sources */,
+				EDE0CA551DD5212D005C0635 /* AppointmentTableCell.swift in Sources */,
+				EDC819C41DF617A400A88E5C /* CustomActivityIndicator.swift in Sources */,
+				EDE8E0181DCBE9010099F028 /* QuestionLabel.swift in Sources */,
+				ED07C0101DEF7CDD008542F4 /* Duration.swift in Sources */,
+				EDB2E55F1DFDF28F006F7F7D /* User.swift in Sources */,
+				EDE0CA421DD4DC7A005C0635 /* TextAreaTableCell.swift in Sources */,
+				EDE0CA3E1DD4DC66005C0635 /* TimePickerTableCell.swift in Sources */,
+				EDE8E0201DCC0E960099F028 /* HomeViewController.swift in Sources */,
+				ED07C01D1DEFAD89008542F4 /* MBCircularProgressBarView.m in Sources */,
+				EDD7D1041DFE09640014B33A /* NotesDetailViewController.swift in Sources */,
+				EDE8E01E1DCC0DFA0099F028 /* RearViewController.swift in Sources */,
+				ED71B99F1DCBD6C3007040E4 /* ViewController.swift in Sources */,
+				ED07C0111DEF7CDD008542F4 /* Int+Timepiece.swift in Sources */,
+				ED02197D1DF0E249005D15FF /* NotesViewController.swift in Sources */,
+				EDE0CA311DD3FDE4005C0635 /* BoolTableViewCell.swift in Sources */,
+				ED71B99D1DCBD6C3007040E4 /* AppDelegate.swift in Sources */,
+				ED71B9CB1DCBDAD7007040E4 /* BETextfield.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9A91DCBD6C3007040E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED71B9B21DCBD6C3007040E4 /* BingeEatingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED71B9B41DCBD6C3007040E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED71B9BD1DCBD6C3007040E4 /* BingeEatingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED71B9AF1DCBD6C3007040E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED71B9981DCBD6C3007040E4 /* BingeEating */;
+			targetProxy = ED71B9AE1DCBD6C3007040E4 /* PBXContainerItemProxy */;
+		};
+		ED71B9BA1DCBD6C3007040E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED71B9981DCBD6C3007040E4 /* BingeEating */;
+			targetProxy = ED71B9B91DCBD6C3007040E4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED71B9A01DCBD6C3007040E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED71B9A11DCBD6C3007040E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED71B9A51DCBD6C3007040E4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED71B9A61DCBD6C3007040E4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED71B9BF1DCBD6C3007040E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED71B9C01DCBD6C3007040E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED71B9C21DCBD6C3007040E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4A25B1D3752B0E7590376A4 /* Pods-BingeEating.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BingeEating/BingeEating.entitlements;
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEating/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.uncc.BingeEating;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73061be8-3ea5-446d-a85a-e55e96efa634";
+				PROVISIONING_PROFILE_SPECIFIER = BingeEatingPush;
+				SWIFT_OBJC_BRIDGING_HEADER = "BingeEating/BingeEating-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		ED71B9C31DCBD6C3007040E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AEEF307225A8906582EEDCE /* Pods-BingeEating.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = BingeEating/BingeEating.entitlements;
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEating/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.uncc.BingeEating;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "73061be8-3ea5-446d-a85a-e55e96efa634";
+				PROVISIONING_PROFILE_SPECIFIER = BingeEatingPush;
+				SWIFT_OBJC_BRIDGING_HEADER = "BingeEating/BingeEating-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		ED71B9C51DCBD6C3007040E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEatingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uncc.BingeEatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingeEating.app/BingeEating";
+			};
+			name = Debug;
+		};
+		ED71B9C61DCBD6C3007040E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEatingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uncc.BingeEatingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingeEating.app/BingeEating";
+			};
+			name = Release;
+		};
+		ED71B9C81DCBD6C3007040E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEatingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uncc.BingeEatingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BingeEating;
+			};
+			name = Debug;
+		};
+		ED71B9C91DCBD6C3007040E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 7R8U9B2AP5;
+				INFOPLIST_FILE = BingeEatingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = uncc.BingeEatingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = BingeEating;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED71B9941DCBD6C3007040E4 /* Build configuration list for PBXProject "BingeEating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED71B9BF1DCBD6C3007040E4 /* Debug */,
+				ED71B9C01DCBD6C3007040E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED71B9C11DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEating" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED71B9C21DCBD6C3007040E4 /* Debug */,
+				ED71B9C31DCBD6C3007040E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED71B9C41DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEatingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED71B9C51DCBD6C3007040E4 /* Debug */,
+				ED71B9C61DCBD6C3007040E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED71B9C71DCBD6C3007040E4 /* Build configuration list for PBXNativeTarget "BingeEatingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED71B9C81DCBD6C3007040E4 /* Debug */,
+				ED71B9C91DCBD6C3007040E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ED71B9911DCBD6C3007040E4 /* Project object */;
+}

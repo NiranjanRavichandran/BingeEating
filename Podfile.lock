@@ -1,0 +1,15 @@
+PODS:
+  - Alamofire (4.0.0)
+  - PMAlertController (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - PMAlertController
+
+SPEC CHECKSUMS:
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  PMAlertController: 8f809a67e740bd6ce1bb7d6017c12c94e997f64b
+
+PODFILE CHECKSUM: a39803381195f29bfec45598087cd186c2324066
+
+COCOAPODS: 1.0.1

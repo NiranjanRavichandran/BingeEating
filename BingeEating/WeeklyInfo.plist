@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Record how many binges you had over the last seven days. You should get this figure from your monitoring records.</string>
+	<string>Record the number of times you practiced any extreme method of weight control, such as self-induced vomiting or misusing laxatives or diuretics. Record each behavioral separately. Again, you should get these figures from your monitoring records.</string>
+	<string>Record how many “good days” you had during the week. A good day is one on which you did your best to change by following the program. The definition of a good day will alter as you work through the program. At this point a good day is one on which you monitored accurately.</string>
+	<string>Record your weight. If you weighed yourself more than once during the week, record the weight you were on the morning on which you were meant to weigh yourself.</string>
+	<string>Record the number of days you reached your goal of fruit/vegetable intake (2 servings of fruit and 3 servings of vegetables)</string>
+	<string>Record the number of days you engaged in 30 minutes of moderate physical activity.</string>
+	<string>Record other points of note. For example, you should record when you move from one step of the program to the next. Also note any events that significantly influenced your eating; for example, being ill or away from home.</string>
+</array>
+</plist>

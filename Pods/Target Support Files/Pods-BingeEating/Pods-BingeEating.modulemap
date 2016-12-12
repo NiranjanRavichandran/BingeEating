@@ -1,0 +1,6 @@
+framework module Pods_BingeEating {
+  umbrella header "Pods-BingeEating-umbrella.h"
+
+  export *
+  module * { export * }
+}

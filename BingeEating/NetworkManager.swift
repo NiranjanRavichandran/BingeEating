@@ -1,0 +1,278 @@
+//
+//  NetworkManager.swift
+//  BingeEating
+//
+//  Created by Niranjan Ravichandran on 11/9/16.
+//  Copyright © 2016 uncc. All rights reserved.
+//
+
+import Foundation
+import Alamofire
+
+enum AppEndPoints: String {
+    case base = "http://52.89.68.106:8080"
+    case login = "/signin"
+    case coachMessage = "/getMotivationalMessage"
+    case postDailyLog = "/postDailyLog"
+    case postPhyLog = "/postPhysicalDailyLog"
+    case postWeeklyLog = "/postWeeklyLog"
+    case getDailyLog = "/getDailyLog"
+    case getPhyLogs = "/getPhysicalDailyLog"
+    case getProgress = "/getProgress"
+    case getWeeklyLog = "/getWeeklyLog"
+    case getNewWeeklyLog = "/getNewWeeklyLog"
+    case getAppointments = "/getMyAppointments"
+    case getNotes = "/viewNotes"
+}
+
+enum BEErrorMEssages: String {
+    case commom = "Someting went wrong"
+}
+
+class NetworkManager {
+    
+    static let sharedManager = NetworkManager()
+    
+    func loginWithUsername(username: String, passowrd: String, onSuccess success: @escaping (String) -> Void, onError error: (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.login.rawValue, method: .post, parameters: ["username": username, "password": passowrd], encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                if let data = jsonResponse["data"] as? [String: Any] {
+                    if let token = data["token"] as? String {
+                        success(token)
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    //To be optimised later...
+    func getMessageFromServer(token: String, keyword: String, onSuccess success: @escaping (String) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.coachMessage.rawValue, method: .post, parameters: ["token": token, "label": keyword], encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                
+                if let messages = jsonResponse["message"] as? [[String: Any]] {
+                    success(messages.first!["Message"] as! String)
+                }
+            }
+        }
+    }
+    
+    //Post daily log
+    func postDailyLog(token: String, dailylogItem: DailyLogItem, onSuccess success: @escaping () -> Void, onError error: @escaping (String) -> Void) {
+        print("###", dailylogItem)
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.postDailyLog.rawValue, method: .post, parameters: ["token": token, "logId": dailylogItem.logId, "time": dailylogItem.eatTime, "consumed": dailylogItem.foodAndDrink, "servings": dailylogItem.servings, "binge": dailylogItem.didBinge.getRaw(), "vl": dailylogItem.vomitOrLaxative.getRaw() , "cs": dailylogItem.contextSetting, "feelings": dailylogItem.feelings, "image": dailylogItem.imageUrl ?? "", "newImage": dailylogItem.isNewImage], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            print("*****", response.result.description)
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errorStat = jsonResponse["error"] as? Bool {
+                    if !errorStat {
+                        success()
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                    }
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func postPhysicalActivity(token: String, activityItem: PhysicalLogItem, onSuccess success: @escaping () -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.postPhyLog.rawValue, method: .post, parameters: ["token": token, "logId": activityItem.logId, "time": activityItem.time, "minutes": activityItem.duration, "workout": activityItem.typeOfActivity], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                print("@@@", jsonResponse)
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        success()
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMEssages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getDailyLog(token: String, forDate date: String, onSuccess success: @escaping ([DailyLogItem]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getDailyLog.rawValue, method: .post, parameters: ["token": token, "date": date], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let isError = jsonResponse["error"] as? Bool {
+                    if !isError {
+                        if let logs = jsonResponse["data"]?["dailyLogs"] as? [[String: Any]] {
+                            var dailyLogs = [DailyLogItem]()
+                            for item in logs {
+                                dailyLogs.append(DailyLogItem(jsonObject: item))
+                            }
+                            success(dailyLogs)
+                        }
+                    }else {
+                        error(BEErrorMEssages.commom.rawValue)
+                    }
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getPhyLogs(token: String, date: String, onSuccess success: @escaping ([PhysicalLogItem]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getPhyLogs.rawValue, method: .post, parameters: ["token" : token, "date": date], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String : AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        var phyLogs = [PhysicalLogItem]()
+                        print("@@@@", jsonResponse)
+                        if let logs = jsonResponse["data"]?["dailyLogs"] as? [[String: Any]] {
+                            for item in logs {
+                                phyLogs.append(PhysicalLogItem(jsonObject: item))
+                            }
+                            success(phyLogs)
+                        }
+                    }
+                }else {
+                    error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getUserProgress(token: String, onSuccess success: @escaping (Int) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getProgress.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status { //Success
+                        if let data = jsonResponse["data"] as? [String: AnyObject] {
+                            if let progress = data["progress"] as? Int {
+                                success(progress)
+                            }else {
+                                error(data["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                            }
+                        }
+                    }else {
+                        error(BEErrorMEssages.commom.rawValue)
+                    }
+                }
+            }
+        }
+    }
+    
+    func getAppointments(token: String, onSuccess success: @escaping ([[String: Any]]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getAppointments.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status {
+                        if let data = jsonResponse["data"] as? [String: Any] {
+                            if let appointments = data["appointments"] as? [[String: Any]] {
+                                success(appointments)
+                            }
+                        }else {
+                            error(BEErrorMEssages.commom.rawValue)
+                        }
+                    }else {
+                        error(BEErrorMEssages.commom.rawValue)
+                    }
+                }
+            }
+        }
+
+    }
+    
+    func saveImageToServer(token: String) {
+        
+    }
+    
+    func getWeeklyLog(token: String, onSuccess success: @escaping ([WeeklyLog]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getWeeklyLog.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status {
+                        if let logs = jsonResponse["data"]?["weeklyLog"] as? [[String: Any]] {
+                            var weeklyLogs = [WeeklyLog]()
+                            for item in logs {
+                                weeklyLogs.append(WeeklyLog(jsonObject: item))
+                            }
+                            success(weeklyLogs)
+                        }
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMEssages.commom.rawValue)
+                }
+            }
+        }
+    }
+    
+    func getNewWeeklyLog(token: String, week: Int, onSuccess success: @escaping (WeeklyLog) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getNewWeeklyLog.rawValue, method: .post, parameters: ["token": token, "week": week], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status {
+                        if let log = jsonResponse["data"]?["WeeklyLog"] as? [String: Any] {
+                            success(WeeklyLog(jsonObject: log))
+                        }
+                    }else {
+                        error(BEErrorMEssages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMEssages.commom.rawValue)
+                }
+            }
+        }
+    }
+    
+    func postWeeklyLog(token: String, logId: String, binges: Int, vld: Int, physical: Int, fv: Int, goodDays: Int, events: String, onSuccess success: @escaping () -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.postWeeklyLog.rawValue, method: .post, parameters: ["token": token, "LogId": logId, "binges": binges, "vld": vld, "physical": physical, "fv": fv, "events": events, "goodDays": goodDays], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                print(jsonResponse)
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status {
+                        success()
+                    }else {
+                        error(BEErrorMEssages.commom.rawValue)
+                    }
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getNotes(token: String, onSuccess success: @escaping ([User]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getNotes.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let status = jsonResponse["error"] as? Bool {
+                    if !status {
+                        var notes = [User]()
+                        print(jsonResponse)
+                        if let uNotes = jsonResponse["data"]?["notes"] as? [[String: AnyObject]] {
+                            for note in uNotes {
+                                notes.append(User(jsonObject: note))
+                            }
+                            success(notes)
+                        }
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMEssages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMEssages.commom.rawValue)
+            }
+        }
+    }
+    
+    func saveNotes(token: String, notes: String, isVisible: Int) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getDailyLog.rawValue, method: .post, parameters: ["token": token, "notes": notes, "isVisible": isVisible], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: Any] {
+                print("@@@", jsonResponse)
+            }
+        }
+    }
+}

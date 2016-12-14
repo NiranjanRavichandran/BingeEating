@@ -17,6 +17,7 @@ enum BEStoryboardID: String {
     case notes = "NotesView"
     case addPhoto = "AddPhotoView"
     case game = "GameView"
+    case changePassword = "ChangePasswordView"
 }
 
 enum BECellType: String {
@@ -135,6 +136,14 @@ class Utility {
         }else {
             return nil
         }
+    }
+    
+    class func getAccessKey(from urlString: String) -> String? {
+        let range = urlString.range(of: "(?<=com/)[^?]+(?= ?)", options: .regularExpression, range: nil, locale: nil)
+        if range != nil {
+            return urlString.substring(with: range!)
+        }
+        return nil
     }
 }
 

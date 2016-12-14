@@ -26,6 +26,11 @@ enum AppEndPoints: String {
     case addNewNote = "/addNotes"
     case updateNotes = "/editNotes"
     case deleteNotes = "/deleteNotes"
+    case getSignedURL = "/"
+    case changePassword = "/changePassword"
+    case getAllScores = "/getAllScores"
+    case updateScore = "/updateScore"
+    case getQuestions = "/getQuestions"
 }
 
 enum BEErrorMessages: String {
@@ -185,15 +190,35 @@ class NetworkManager {
 
     }
     
+    func getSignedURL(token: String, onSuccess success: @escaping (String) -> Void, onError error: @escaping (String) -> Void) {
+            Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getSignedURL.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+                if let jsonResponse = response.result.value as? [String: AnyObject] {
+                    if let errStat = jsonResponse["error"] as? Bool {
+                        if !errStat {
+                            success(jsonResponse["data"]?["str"] as? String ?? " ")
+                        }else {
+                            error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                        }
+                    }else {
+                        error(BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }
+    }
+    
     func saveImageToServer(token: String, postURL: String, image: UIImage, onSuccess success: @escaping (Bool) -> Void, onError error: @escaping (String) -> Void) {
         if let imageData = UIImageJPEGRepresentation(image, 0.5) {
-            let request = Alamofire.upload(imageData, to: postURL, method: .put, headers: nil)
+            let request = Alamofire.upload(imageData, to: postURL, method: .put, headers: ["Content-Type":"image/jpeg"])
             request.validate()
             request.response(completionHandler: { (response) in
-                print("AWS***", response.response, response.error)
-            })
-            request.responseJSON(completionHandler: { (response) in
-                print("AWS****", response.result.value)
+                print("AWS***", response.response)
+                if response.response?.statusCode == 200 {
+                    success(true)
+                }else {
+                    error(response.response.debugDescription)
+                }
             })
         }
     }
@@ -324,6 +349,94 @@ class NetworkManager {
                 if let errStat = jsonResponse["error"] as? Bool {
                     if !errStat {
                         success(true)
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func changePassword(token: String, with password: String, success: @escaping (_ user: User, _ token: String) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.changePassword.rawValue, method: .post, parameters: ["token": token, "password": password], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        if let data = jsonResponse["data"] as? [String: Any]{
+                            success(User(jsonObject: data["user"] as! [String: Any]), data["token"] as! String)
+                        }
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getAllScore(token: String, onSuccess success: @escaping ([Int]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getAllScores.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        if let data = jsonResponse["data"] as? [String: AnyObject] {
+                            if let scores = data["scores"] as? [[String: Any]] {
+                                var userScores = [Int]()
+                                for item in scores {
+                                    userScores.append(item["Score"] as! Int)
+                                }
+                                success(userScores)
+                            }
+                        }
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func updateScore(token: String, score: Int, onSuccess success: @escaping () -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.updateScore.rawValue, method: .post, parameters: ["token": token, "score": score], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        success()
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func getTriviaQuestions(token: String, onSuccess success: @escaping ([Question]) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getQuestions.rawValue, method: .post, parameters: ["token": token], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        if let questList = jsonResponse["data"]?["questions"] as? [[String: AnyObject]] {
+                            var questions = [Question]()
+                            for item in questList {
+                                questions.append(Question(jsonObject: item))
+                            }
+                            success(questions)
+                        }
                     }else {
                         error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                     }

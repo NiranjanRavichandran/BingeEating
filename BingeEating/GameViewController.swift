@@ -15,6 +15,14 @@ class GameViewController: UIViewController, ABSteppedProgressBarDelegate, UITabl
     @IBOutlet weak var optionsTableView: UITableView!
     
     var selectedCell: IndexPath?
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    var questions = [Question]()
+    var index: Int = 0
+    var score: Int = 0
+    
+    lazy private var actitvityIndicator: CustomActivityIndicator = {
+        return CustomActivityIndicator(image: UIImage(named: "Spinner.png")!)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +33,8 @@ class GameViewController: UIViewController, ABSteppedProgressBarDelegate, UITabl
         progressBar.delegate = self
         progressBar.backgroundColor = Utility.lightGrey
         progressBar.isUserInteractionEnabled = false
+        progressBar.currentIndex = -1
+        progressBar.numberOfPoints = 5
         
         questionLabel.clipsToBounds = true
         questionLabel.layer.cornerRadius = 8
@@ -35,7 +45,29 @@ class GameViewController: UIViewController, ABSteppedProgressBarDelegate, UITabl
         optionsTableView.delegate = self
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "scores.png"), style: .done, target: self, action: #selector(self.launchSocreView))
-        
+        self.getQuestions()
+    }
+    
+    func getQuestions() {
+        if appdelegate.token != nil {
+            NetworkManager.sharedManager.getTriviaQuestions(token: appdelegate.token!, onSuccess: { (list) in
+                self.questions = list
+                self.loadQuestion()
+            }, onError: { (errDesc) in
+
+                Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+            })
+        }
+    }
+    
+    func loadQuestion() {
+        if questions.count > 0 && index < questions.count {
+            self.questionLabel.text =  self.questions[index].question
+            self.optionsTableView.reloadData()
+        }else {
+            //Update score & load scores view
+            self.launchSocreView()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,11 +86,13 @@ class GameViewController: UIViewController, ABSteppedProgressBarDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return questions.count > 0 ? questions[index].options.count : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "optionsCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "optionsCell", for: indexPath) as! OptionsTableViewCell
+        cell.optionLabel.text = questions[index].options[indexPath.row]
+        cell.optionLabel.backgroundColor = Utility.bgBlue
         return cell
     }
     
@@ -70,12 +104,20 @@ class GameViewController: UIViewController, ABSteppedProgressBarDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentCell = tableView.cellForRow(at: indexPath) as! OptionsTableViewCell
         currentCell.optionLabel.backgroundColor = Utility.lightPurpule
-        if selectedCell != nil {
+        /*if selectedCell != nil {
             let selcell = tableView.cellForRow(at: selectedCell!) as! OptionsTableViewCell
             selcell.optionLabel.backgroundColor = Utility.bgBlue
         }
-        selectedCell = indexPath
+        selectedCell = indexPath */
+        if indexPath.row == questions[index].answer {
+            Utility.showAlert(withTitle: "Yay", withMessage: "Correct answer! you got 10 points.", from: self, type: .alert)
+            self.score += 10
+        }else {
+            Utility.showAlert(withTitle: "Oops", withMessage: "The correct answer is \(questions[index].options[questions[index].answer])", from: self, type: .error)
+        }
+        index += 1
         progressBar.currentIndex += 1
+        loadQuestion()
     }
     
     //MARK: - Progressbar delegate

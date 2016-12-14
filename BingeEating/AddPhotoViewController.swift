@@ -35,6 +35,7 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         if imageView.image != nil {
             delegate?.didPickImage(image: imageView.image!)
         }
+        dismissView()
     }
 
     

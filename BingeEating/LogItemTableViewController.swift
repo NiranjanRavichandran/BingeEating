@@ -265,10 +265,15 @@ class LogItemTableViewController: UITableViewController, UITextFieldDelegate, Bo
     func didPickImage(image: UIImage) {
         //Save image to server here
         if appdelegate.token != nil {
-            NetworkManager.sharedManager.saveImageToServer(token: appdelegate.token!, postURL: "https://amad-whs.s3-us-west-2.amazonaws.com/Trial?AWSAccessKeyId=AKIAILHS2D4RZYEJ27NA&Expires=1481689427&Signature=ZiCc20AV0o3MQmr%2BExVAvqYuEfM%3D", image: image, onSuccess: { (status) in
-                if status {
-                    print("Image uploaded to server")
-                }
+            NetworkManager.sharedManager.getSignedURL(token: appdelegate.token!, onSuccess: { (keyStr) in
+                self.newLogItem.imageUrl = Utility.getAccessKey(from: keyStr)
+                NetworkManager.sharedManager.saveImageToServer(token: self.appdelegate.token!, postURL: "https://amad-whs.s3.amazonaws.com/trials.jpg?AWSAccessKeyId=AKIAILHS2D4RZYEJ27NA&Expires=1481769697&Signature=aJRqXkJIdF2MIuA0j2eltiwLVek%3D", image: image, onSuccess: { (status) in
+                    if status {
+                        print("Image uploaded to server")
+                    }
+                }, onError: { (errDesc) in
+                    Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+                })
             }, onError: { (errDesc) in
                 Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
             })

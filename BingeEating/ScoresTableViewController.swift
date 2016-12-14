@@ -9,6 +9,13 @@
 import UIKit
 
 class ScoresTableViewController: UITableViewController {
+    
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    var scores = [Int]()
+    
+    lazy private var actitvityIndicator: CustomActivityIndicator = {
+        return CustomActivityIndicator(image: UIImage(named: "Spinner.png")!)
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +26,26 @@ class ScoresTableViewController: UITableViewController {
         let confettiView = ConfettiView(frame: self.view.bounds)
         self.view.addSubview(confettiView)
         confettiView.startConfetti()
+        self.getAllScores()
+        actitvityIndicator.startAnimating()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getAllScores() {
+        if appdelegate.token != nil {
+            NetworkManager.sharedManager.getAllScore(token: appdelegate.token!, onSuccess: { (socreList) in
+                self.scores = socreList.sorted(by: >)
+                self.tableView.reloadData()
+                self.actitvityIndicator.stopAnimating()
+            }, onError: { (errDesc) in
+                self.actitvityIndicator.stopAnimating()
+                Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+            })
+        }
     }
 
     // MARK: - Table view data source
@@ -33,12 +55,13 @@ class ScoresTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return scores.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoresTableCell
-
+        cell.nameLabel.text = "User \(indexPath.row + 1)"
+        cell.scoreLabel.text = "\(scores[indexPath.row])"
         return cell
     }
     

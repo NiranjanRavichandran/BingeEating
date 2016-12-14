@@ -14,6 +14,7 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var objCaptureSession:AVCaptureSession?
     var objCaptureVideoPreviewLayer:AVCaptureVideoPreviewLayer?
     var vwQRCode:UIView?
+    var mainVC: UIViewController?
     
 
     override func viewDidLoad() {
@@ -90,7 +91,13 @@ class QRCodeViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             vwQRCode?.frame = objBarCode.bounds;
             if objMetadataMachineReadableCodeObject.stringValue != nil {
                 print("@@@", objMetadataMachineReadableCodeObject.stringValue)
-                dismissView()
+                let appdelegate = UIApplication.shared.delegate as! AppDelegate
+                appdelegate.token = objMetadataMachineReadableCodeObject.stringValue
+                self.dismiss(animated: true, completion: { 
+                    let passwordView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: BEStoryboardID.changePassword.rawValue)
+                    self.mainVC?.present(UINavigationController(rootViewController: passwordView), animated: true, completion: nil)
+                })
+                return
             }
         }
     }

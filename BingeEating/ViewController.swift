@@ -42,14 +42,16 @@ class ViewController: UIViewController {
             
         }, onError: { errorMessage in
             
-            print("###", errorMessage)
+            Utility.showAlert(withTitle: "Oops", withMessage: errorMessage, from: self, type: .error)
             
         })
     
     }
     
     func launchQRReaderView() {
-        self.present(UINavigationController(rootViewController: QRCodeViewController()), animated: true, completion: nil)
+        let qrCodeVC = QRCodeViewController()
+        qrCodeVC.mainVC = self
+        self.present(UINavigationController(rootViewController: qrCodeVC), animated: true, completion: nil)
     }
 }
 

@@ -36,6 +36,8 @@
 		ED411C021E00BBDF0066BB12 /* ScoresTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C001E00BBDF0066BB12 /* ScoresTableCell.swift */; };
 		ED411C031E00BBDF0066BB12 /* ScoresTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED411C011E00BBDF0066BB12 /* ScoresTableCell.xib */; };
 		ED411C051E00BF6E0066BB12 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */; };
+		ED411C071E00C75A0066BB12 /* ChangePasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C061E00C75A0066BB12 /* ChangePasswordController.swift */; };
+		ED411C091E0118720066BB12 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C081E0118720066BB12 /* Question.swift */; };
 		ED71B99D1DCBD6C3007040E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */; };
 		ED71B99F1DCBD6C3007040E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99E1DCBD6C3007040E4 /* ViewController.swift */; };
 		ED71B9A21DCBD6C3007040E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71B9A01DCBD6C3007040E4 /* Main.storyboard */; };
@@ -130,6 +132,8 @@
 		ED411C001E00BBDF0066BB12 /* ScoresTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableCell.swift; sourceTree = "<group>"; };
 		ED411C011E00BBDF0066BB12 /* ScoresTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresTableCell.xib; sourceTree = "<group>"; };
 		ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
+		ED411C061E00C75A0066BB12 /* ChangePasswordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordController.swift; sourceTree = "<group>"; };
+		ED411C081E0118720066BB12 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		ED71B9991DCBD6C3007040E4 /* BingeEating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingeEating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED71B99E1DCBD6C3007040E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 		EDE0CA261DD3D952005C0635 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED411C061E00C75A0066BB12 /* ChangePasswordController.swift */,
 				ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */,
 				ED411BEF1DFF68D30066BB12 /* QRCodeViewController.swift */,
 				EDC819C51DF628EE00A88E5C /* Daily Log */,
@@ -428,6 +433,7 @@
 		EDE0CA2B1DD3E25A005C0635 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ED411C081E0118720066BB12 /* Question.swift */,
 				EDE0CA291DD3E251005C0635 /* DailyLog.swift */,
 				ED07C01E1DF09536008542F4 /* WeeklyLog.swift */,
 				EDB2E55E1DFDF28E006F7F7D /* User.swift */,
@@ -640,6 +646,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED411C071E00C75A0066BB12 /* ChangePasswordController.swift in Sources */,
 				EDE0CA281DD3DB62005C0635 /* NetworkManager.swift in Sources */,
 				EDE0CA371DD405AF005C0635 /* AreaTableViewCell.swift in Sources */,
 				EDE0CA501DD4F08E005C0635 /* PhysicalItemTableCell.swift in Sources */,
@@ -672,6 +679,7 @@
 				EDC819C21DF4AD8C00A88E5C /* BECommonField.swift in Sources */,
 				ED71B9CD1DCBDCA4007040E4 /* Utility.swift in Sources */,
 				ED07C0141DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift in Sources */,
+				ED411C091E0118720066BB12 /* Question.swift in Sources */,
 				EDE0CA451DD4DF20005C0635 /* PhysicalActivityViewController.swift in Sources */,
 				EDE0CA551DD5212D005C0635 /* AppointmentTableCell.swift in Sources */,
 				EDC819C41DF617A400A88E5C /* CustomActivityIndicator.swift in Sources */,

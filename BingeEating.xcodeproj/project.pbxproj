@@ -25,6 +25,17 @@
 		ED07C0231DF09B2F008542F4 /* CommonFieldTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */; };
 		ED07C0271DF0B65C008542F4 /* WeeklyLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0261DF0B65C008542F4 /* WeeklyLogViewController.swift */; };
 		ED07C0291DF0BAAD008542F4 /* BEPurpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED07C0281DF0BAAD008542F4 /* BEPurpleButton.swift */; };
+		ED411BF01DFF68D40066BB12 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BEF1DFF68D30066BB12 /* QRCodeViewController.swift */; };
+		ED411BF21E006CCF0066BB12 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BF11E006CCF0066BB12 /* GameViewController.swift */; };
+		ED411BF61E006E8C0066BB12 /* ABPointExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BF31E006E8C0066BB12 /* ABPointExtension.swift */; };
+		ED411BF71E006E8C0066BB12 /* ABSteppedProgessBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BF41E006E8C0066BB12 /* ABSteppedProgessBar.swift */; };
+		ED411BF81E006E8C0066BB12 /* ABTextLayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BF51E006E8C0066BB12 /* ABTextLayerExtension.swift */; };
+		ED411BFC1E0078930066BB12 /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BFA1E0078930066BB12 /* OptionsTableViewCell.swift */; };
+		ED411BFD1E0078930066BB12 /* OptionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED411BFB1E0078930066BB12 /* OptionsTableViewCell.xib */; };
+		ED411BFF1E00B62A0066BB12 /* ConfettieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411BFE1E00B62A0066BB12 /* ConfettieView.swift */; };
+		ED411C021E00BBDF0066BB12 /* ScoresTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C001E00BBDF0066BB12 /* ScoresTableCell.swift */; };
+		ED411C031E00BBDF0066BB12 /* ScoresTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED411C011E00BBDF0066BB12 /* ScoresTableCell.xib */; };
+		ED411C051E00BF6E0066BB12 /* ScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */; };
 		ED71B99D1DCBD6C3007040E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */; };
 		ED71B99F1DCBD6C3007040E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED71B99E1DCBD6C3007040E4 /* ViewController.swift */; };
 		ED71B9A21DCBD6C3007040E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED71B9A01DCBD6C3007040E4 /* Main.storyboard */; };
@@ -108,6 +119,17 @@
 		ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonFieldTableCell.xib; sourceTree = "<group>"; };
 		ED07C0261DF0B65C008542F4 /* WeeklyLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyLogViewController.swift; sourceTree = "<group>"; };
 		ED07C0281DF0BAAD008542F4 /* BEPurpleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BEPurpleButton.swift; sourceTree = "<group>"; };
+		ED411BEF1DFF68D30066BB12 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		ED411BF11E006CCF0066BB12 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		ED411BF31E006E8C0066BB12 /* ABPointExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABPointExtension.swift; sourceTree = "<group>"; };
+		ED411BF41E006E8C0066BB12 /* ABSteppedProgessBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABSteppedProgessBar.swift; sourceTree = "<group>"; };
+		ED411BF51E006E8C0066BB12 /* ABTextLayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABTextLayerExtension.swift; sourceTree = "<group>"; };
+		ED411BFA1E0078930066BB12 /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		ED411BFB1E0078930066BB12 /* OptionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsTableViewCell.xib; sourceTree = "<group>"; };
+		ED411BFE1E00B62A0066BB12 /* ConfettieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfettieView.swift; sourceTree = "<group>"; };
+		ED411C001E00BBDF0066BB12 /* ScoresTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableCell.swift; sourceTree = "<group>"; };
+		ED411C011E00BBDF0066BB12 /* ScoresTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresTableCell.xib; sourceTree = "<group>"; };
+		ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoresTableViewController.swift; sourceTree = "<group>"; };
 		ED71B9991DCBD6C3007040E4 /* BingeEating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BingeEating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED71B99C1DCBD6C3007040E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED71B99E1DCBD6C3007040E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -221,6 +243,16 @@
 			path = "../../../../Downloads/WWCalendarTimeSelector-master/Sources";
 			sourceTree = "<group>";
 		};
+		ED411BF91E006E940066BB12 /* ABStepper */ = {
+			isa = PBXGroup;
+			children = (
+				ED411BF31E006E8C0066BB12 /* ABPointExtension.swift */,
+				ED411BF41E006E8C0066BB12 /* ABSteppedProgessBar.swift */,
+				ED411BF51E006E8C0066BB12 /* ABTextLayerExtension.swift */,
+			);
+			name = ABStepper;
+			sourceTree = "<group>";
+		};
 		ED71B9901DCBD6C3007040E4 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +332,7 @@
 		EDC819C71DF6294F00A88E5C /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				ED411C001E00BBDF0066BB12 /* ScoresTableCell.swift */,
 				ED07C0201DF09B2F008542F4 /* CommonFieldTableCell.swift */,
 				EDE0CA541DD5212D005C0635 /* AppointmentTableCell.swift */,
 				EDE0CA4E1DD4F08E005C0635 /* PhysicalItemTableCell.swift */,
@@ -309,6 +342,7 @@
 				EDE0CA2E1DD3FDD8005C0635 /* FieldTableViewCell.swift */,
 				EDE0CA301DD3FDE4005C0635 /* BoolTableViewCell.swift */,
 				EDE0CA2C1DD3F922005C0635 /* PickerTableViewCell.swift */,
+				ED411BFA1E0078930066BB12 /* OptionsTableViewCell.swift */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";
@@ -316,6 +350,7 @@
 		EDE0CA221DD3D924005C0635 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ED411BF91E006E940066BB12 /* ABStepper */,
 				EDF62ABE1DF0C3D000917718 /* WeeklyInfo.plist */,
 				ED07C0181DEFAD88008542F4 /* MBCircularProgressBarLayer.h */,
 				ED07C0191DEFAD88008542F4 /* MBCircularProgressBarLayer.m */,
@@ -337,6 +372,7 @@
 				EDE8E01B1DCC0CEF0099F028 /* SWRevealViewController.m */,
 				EDE8E0191DCC0CEE0099F028 /* BingeEating-Bridging-Header.h */,
 				EDE0CA271DD3DB62005C0635 /* NetworkManager.swift */,
+				ED411BFE1E00B62A0066BB12 /* ConfettieView.swift */,
 				EDC819C31DF617A400A88E5C /* CustomActivityIndicator.swift */,
 			);
 			name = "Supporting Files";
@@ -350,7 +386,9 @@
 				EDE0CA3D1DD4DC66005C0635 /* TimePickerTableCell.xib */,
 				EDE0CA411DD4DC7A005C0635 /* TextAreaTableCell.xib */,
 				ED07C0211DF09B2F008542F4 /* CommonFieldTableCell.xib */,
+				ED411BFB1E0078930066BB12 /* OptionsTableViewCell.xib */,
 				EDE0CA4F1DD4F08E005C0635 /* PhysicalItemTableCell.xib */,
+				ED411C011E00BBDF0066BB12 /* ScoresTableCell.xib */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -370,6 +408,8 @@
 		EDE0CA261DD3D952005C0635 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED411C041E00BF6E0066BB12 /* ScoresTableViewController.swift */,
+				ED411BEF1DFF68D30066BB12 /* QRCodeViewController.swift */,
 				EDC819C51DF628EE00A88E5C /* Daily Log */,
 				EDC819C61DF6290000A88E5C /* Weekly Log */,
 				EDE0CA521DD52085005C0635 /* AppoinmentsTableViewController.swift */,
@@ -380,6 +420,7 @@
 				EDE8E01D1DCC0DFA0099F028 /* RearViewController.swift */,
 				ED02197C1DF0E249005D15FF /* NotesViewController.swift */,
 				EDD7D1031DFE09640014B33A /* NotesDetailViewController.swift */,
+				ED411BF11E006CCF0066BB12 /* GameViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -518,9 +559,11 @@
 				ED07C0161DEF7CDD008542F4 /* WWCalendarTimeSelector.storyboard in Resources */,
 				ED07C0231DF09B2F008542F4 /* CommonFieldTableCell.xib in Resources */,
 				ED71B9A71DCBD6C3007040E4 /* LaunchScreen.storyboard in Resources */,
+				ED411C031E00BBDF0066BB12 /* ScoresTableCell.xib in Resources */,
 				EDE0CA3F1DD4DC66005C0635 /* TimePickerTableCell.xib in Resources */,
 				EDE0CA351DD3FF88005C0635 /* LogQuestions.plist in Resources */,
 				EDF62ABF1DF0C3D000917718 /* WeeklyInfo.plist in Resources */,
+				ED411BFD1E0078930066BB12 /* OptionsTableViewCell.xib in Resources */,
 				ED71B9A41DCBD6C3007040E4 /* Assets.xcassets in Resources */,
 				EDE0CA431DD4DC7A005C0635 /* TextAreaTableCell.xib in Resources */,
 				EDE0CA511DD4F08E005C0635 /* PhysicalItemTableCell.xib in Resources */,
@@ -603,9 +646,11 @@
 				EDE0CA571DD52393005C0635 /* ProgressViewController.swift in Sources */,
 				ED07C0151DEF7CDD008542F4 /* String+Timepiece.swift in Sources */,
 				EDC819C01DF3C20300A88E5C /* PopAnimator.swift in Sources */,
+				ED411C021E00BBDF0066BB12 /* ScoresTableCell.swift in Sources */,
 				ED07C0121DEF7CDD008542F4 /* NSCalendar+Timepiece.swift in Sources */,
 				EDE8E01C1DCC0CEF0099F028 /* SWRevealViewController.m in Sources */,
 				EDE0CA471DD4ED72005C0635 /* DailyLogViewController.swift in Sources */,
+				ED411BF81E006E8C0066BB12 /* ABTextLayerExtension.swift in Sources */,
 				EDE0CA2F1DD3FDD8005C0635 /* FieldTableViewCell.swift in Sources */,
 				EDE0CA591DD54C91005C0635 /* AddPhotoViewController.swift in Sources */,
 				EDE0CA531DD52085005C0635 /* AppoinmentsTableViewController.swift in Sources */,
@@ -615,12 +660,15 @@
 				ED07C01C1DEFAD89008542F4 /* MBCircularProgressBarLayer.m in Sources */,
 				ED07C0221DF09B2F008542F4 /* CommonFieldTableCell.swift in Sources */,
 				ED07C0131DEF7CDD008542F4 /* NSDate+Timepiece.swift in Sources */,
+				ED411C051E00BF6E0066BB12 /* ScoresTableViewController.swift in Sources */,
 				ED07C0271DF0B65C008542F4 /* WeeklyLogViewController.swift in Sources */,
+				ED411BFC1E0078930066BB12 /* OptionsTableViewCell.swift in Sources */,
 				ED02197B1DF0D278005D15FF /* WeeklyListTableViewController.swift in Sources */,
 				EDE0CA2A1DD3E251005C0635 /* DailyLog.swift in Sources */,
 				ED07C0171DEF7CDD008542F4 /* WWCalendarTimeSelector.swift in Sources */,
 				EDE0CA491DD4EE7A005C0635 /* LogSummaryViewController.swift in Sources */,
 				ED07C01F1DF09536008542F4 /* WeeklyLog.swift in Sources */,
+				ED411BF21E006CCF0066BB12 /* GameViewController.swift in Sources */,
 				EDC819C21DF4AD8C00A88E5C /* BECommonField.swift in Sources */,
 				ED71B9CD1DCBDCA4007040E4 /* Utility.swift in Sources */,
 				ED07C0141DEF7CDD008542F4 /* NSDateComponents+Timepiece.swift in Sources */,
@@ -632,13 +680,17 @@
 				EDB2E55F1DFDF28F006F7F7D /* User.swift in Sources */,
 				EDE0CA421DD4DC7A005C0635 /* TextAreaTableCell.swift in Sources */,
 				EDE0CA3E1DD4DC66005C0635 /* TimePickerTableCell.swift in Sources */,
+				ED411BFF1E00B62A0066BB12 /* ConfettieView.swift in Sources */,
 				EDE8E0201DCC0E960099F028 /* HomeViewController.swift in Sources */,
+				ED411BF01DFF68D40066BB12 /* QRCodeViewController.swift in Sources */,
 				ED07C01D1DEFAD89008542F4 /* MBCircularProgressBarView.m in Sources */,
 				EDD7D1041DFE09640014B33A /* NotesDetailViewController.swift in Sources */,
 				EDE8E01E1DCC0DFA0099F028 /* RearViewController.swift in Sources */,
 				ED71B99F1DCBD6C3007040E4 /* ViewController.swift in Sources */,
 				ED07C0111DEF7CDD008542F4 /* Int+Timepiece.swift in Sources */,
+				ED411BF61E006E8C0066BB12 /* ABPointExtension.swift in Sources */,
 				ED02197D1DF0E249005D15FF /* NotesViewController.swift in Sources */,
+				ED411BF71E006E8C0066BB12 /* ABSteppedProgessBar.swift in Sources */,
 				EDE0CA311DD3FDE4005C0635 /* BoolTableViewCell.swift in Sources */,
 				ED71B99D1DCBD6C3007040E4 /* AppDelegate.swift in Sources */,
 				ED71B9CB1DCBDAD7007040E4 /* BETextfield.swift in Sources */,

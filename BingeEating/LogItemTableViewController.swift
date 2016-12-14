@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogItemTableViewController: UITableViewController, UITextFieldDelegate, BoolResponseDelegate, PickerSelectedDelegate, AreaFieldReturnsDelegate, WWCalendarTimeSelectorProtocol {
+class LogItemTableViewController: UITableViewController, UITextFieldDelegate, BoolResponseDelegate, PickerSelectedDelegate, AreaFieldReturnsDelegate, WWCalendarTimeSelectorProtocol, ImagePickerDelegate {
     
     var logQuestions: [NSDictionary]!
     var expandPicker: Bool = false
@@ -259,6 +259,19 @@ class LogItemTableViewController: UITableViewController, UITextFieldDelegate, Bo
             newLogItem.contextSetting = fieldValue
         }else if cell == 6 {
             newLogItem.feelings = fieldValue
+        }
+    }
+    
+    func didPickImage(image: UIImage) {
+        //Save image to server here
+        if appdelegate.token != nil {
+            NetworkManager.sharedManager.saveImageToServer(token: appdelegate.token!, postURL: "https://amad-whs.s3-us-west-2.amazonaws.com/Trial?AWSAccessKeyId=AKIAILHS2D4RZYEJ27NA&Expires=1481689427&Signature=ZiCc20AV0o3MQmr%2BExVAvqYuEfM%3D", image: image, onSuccess: { (status) in
+                if status {
+                    print("Image uploaded to server")
+                }
+            }, onError: { (errDesc) in
+                Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+            })
         }
     }
 }

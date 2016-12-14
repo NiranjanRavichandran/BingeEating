@@ -32,7 +32,10 @@ class FieldTableViewCell: UITableViewCell, UITextFieldDelegate {
     
     func lauchAttachImage() {
         let topVC = Utility.getTopMostVC()
-        topVC?.present(UINavigationController(rootViewController: AddPhotoViewController()), animated: true, completion: nil)
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let photoVc = storyBoard.instantiateViewController(withIdentifier: BEStoryboardID.addPhoto.rawValue) as? AddPhotoViewController
+        photoVc?.delegate = fieldDelegate as? ImagePickerDelegate
+        topVC?.present(UINavigationController(rootViewController: photoVc!), animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

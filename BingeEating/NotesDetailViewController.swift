@@ -8,10 +8,12 @@
 
 import UIKit
 
-class NotesDetailViewController: UIViewController {
+class NotesDetailViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
     var notesObject: User?
     var notesView: UITextView!
+    var noteIndex: Int?
+    var notesDelegate: NotesUpdatedDelegate?
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class NotesDetailViewController: UIViewController {
         notesView.backgroundColor = Utility.lightGrey
         notesView.text = notesObject?.notes
         notesView.font = UIFont(name: "Helvetica", size: 20)
+        notesView.delegate = self
         self.view.addSubview(notesView)
         notesView.translatesAutoresizingMaskIntoConstraints
             = false
@@ -33,8 +36,11 @@ class NotesDetailViewController: UIViewController {
             visibleImage = UIImage(named: "Visible.png")
         }
         let isVisibleButton = UIBarButtonItem(image: visibleImage, style: .done, target: self, action: #selector(self.markVisible(sender:)))
-        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveNotesToServer))
-        self.navigationItem.rightBarButtonItems = [saveButton, isVisibleButton]
+//        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.saveNotesToServer))
+        self.navigationItem.rightBarButtonItems = [isVisibleButton]
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeHandler))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     func markVisible(sender: UIBarButtonItem) {
@@ -50,13 +56,26 @@ class NotesDetailViewController: UIViewController {
     }
     
     func saveNotesToServer() {
+        notesObject?.notes = notesView.text
+        notesView.resignFirstResponder()
         if appdelegate.token != nil {
-            
+            NetworkManager.sharedManager.updateNotes(token: appdelegate.token!, note: notesObject!, success: { (status) in
+                if status {
+                    print("Notes updated")
+                }
+            }, onError: { (errDesc) in
+                Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+            })
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        saveNotesToServer()
+        notesDelegate?.didUpdateNotes(note: notesObject!, at: noteIndex!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +86,15 @@ class NotesDetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         self.notesView.frame = self.view.bounds
         self.notesView.center = CGPoint(x: UIScreen.main.bounds.width/2, y: UIScreen.main.bounds.height/2)
+    }
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        notesObject?.notes = notesView.text
+        return true
+    }
+    
+    func swipeHandler() {
+        notesView.resignFirstResponder()
     }
 
 }

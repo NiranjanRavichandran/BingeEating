@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var qrCodeButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(self.loginAction), for: .touchUpInside)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        qrCodeButton.addTarget(self, action: #selector(self.launchQRReaderView), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +46,10 @@ class ViewController: UIViewController {
             
         })
     
+    }
+    
+    func launchQRReaderView() {
+        self.present(UINavigationController(rootViewController: QRCodeViewController()), animated: true, completion: nil)
     }
 }
 

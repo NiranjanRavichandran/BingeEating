@@ -10,7 +10,7 @@ import UIKit
 
 class RearViewController: UITableViewController {
     
-    let menuItems = ["Home", "Daily Log", "Weekly Log", "Appointments", "My Progress", "Notes", "Games", "Logout"]
+    let menuItems = ["Home", "Daily Log", "Weekly Log", "Appointments", "My Progress", "Notes", "Game", "Logout"]
     var selectedIndexPath: IndexPath?
     var currentVC: UIViewController?
     var selectedcellView: UIView!
@@ -82,6 +82,9 @@ class RearViewController: UITableViewController {
             }else if indexPath.row == 5 {
                 //Show Notes View
                 newFrontView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: BEStoryboardID.notes.rawValue) as? NotesViewController
+                
+            }else if indexPath.row == 6 {
+                newFrontView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: BEStoryboardID.game.rawValue) as? GameViewController
                 
             }else if indexPath.row == 7{
                 //Call Logout

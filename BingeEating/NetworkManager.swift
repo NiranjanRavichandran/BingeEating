@@ -23,9 +23,12 @@ enum AppEndPoints: String {
     case getNewWeeklyLog = "/getNewWeeklyLog"
     case getAppointments = "/getMyAppointments"
     case getNotes = "/viewNotes"
+    case addNewNote = "/addNotes"
+    case updateNotes = "/editNotes"
+    case deleteNotes = "/deleteNotes"
 }
 
-enum BEErrorMEssages: String {
+enum BEErrorMessages: String {
     case commom = "Someting went wrong"
 }
 
@@ -68,11 +71,11 @@ class NetworkManager {
                     if !errorStat {
                         success()
                     }else {
-                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                     }
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
@@ -85,13 +88,13 @@ class NetworkManager {
                     if !errStat {
                         success()
                     }else {
-                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                     }
                 }else {
-                    error(BEErrorMEssages.commom.rawValue)
+                    error(BEErrorMessages.commom.rawValue)
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
@@ -109,11 +112,11 @@ class NetworkManager {
                             success(dailyLogs)
                         }
                     }else {
-                        error(BEErrorMEssages.commom.rawValue)
+                        error(BEErrorMessages.commom.rawValue)
                     }
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
@@ -133,10 +136,10 @@ class NetworkManager {
                         }
                     }
                 }else {
-                    error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                    error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
@@ -150,11 +153,11 @@ class NetworkManager {
                             if let progress = data["progress"] as? Int {
                                 success(progress)
                             }else {
-                                error(data["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                                error(data["message"] as? String ?? BEErrorMessages.commom.rawValue)
                             }
                         }
                     }else {
-                        error(BEErrorMEssages.commom.rawValue)
+                        error(BEErrorMessages.commom.rawValue)
                     }
                 }
             }
@@ -171,10 +174,10 @@ class NetworkManager {
                                 success(appointments)
                             }
                         }else {
-                            error(BEErrorMEssages.commom.rawValue)
+                            error(BEErrorMessages.commom.rawValue)
                         }
                     }else {
-                        error(BEErrorMEssages.commom.rawValue)
+                        error(BEErrorMessages.commom.rawValue)
                     }
                 }
             }
@@ -182,8 +185,17 @@ class NetworkManager {
 
     }
     
-    func saveImageToServer(token: String) {
-        
+    func saveImageToServer(token: String, postURL: String, image: UIImage, onSuccess success: @escaping (Bool) -> Void, onError error: @escaping (String) -> Void) {
+        if let imageData = UIImageJPEGRepresentation(image, 0.5) {
+            let request = Alamofire.upload(imageData, to: postURL, method: .put, headers: nil)
+            request.validate()
+            request.response(completionHandler: { (response) in
+                print("AWS***", response.response, response.error)
+            })
+            request.responseJSON(completionHandler: { (response) in
+                print("AWS****", response.result.value)
+            })
+        }
     }
     
     func getWeeklyLog(token: String, onSuccess success: @escaping ([WeeklyLog]) -> Void, onError error: @escaping (String) -> Void) {
@@ -199,10 +211,10 @@ class NetworkManager {
                             success(weeklyLogs)
                         }
                     }else {
-                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                     }
                 }else {
-                    error(BEErrorMEssages.commom.rawValue)
+                    error(BEErrorMessages.commom.rawValue)
                 }
             }
         }
@@ -217,10 +229,10 @@ class NetworkManager {
                             success(WeeklyLog(jsonObject: log))
                         }
                     }else {
-                        error(BEErrorMEssages.commom.rawValue)
+                        error(BEErrorMessages.commom.rawValue)
                     }
                 }else {
-                    error(BEErrorMEssages.commom.rawValue)
+                    error(BEErrorMessages.commom.rawValue)
                 }
             }
         }
@@ -234,11 +246,11 @@ class NetworkManager {
                     if !status {
                         success()
                     }else {
-                        error(BEErrorMEssages.commom.rawValue)
+                        error(BEErrorMessages.commom.rawValue)
                     }
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
@@ -257,21 +269,69 @@ class NetworkManager {
                             success(notes)
                         }
                     }else {
-                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMEssages.commom.rawValue)
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
                     }
                 }else {
-                    error(BEErrorMEssages.commom.rawValue)
+                    error(BEErrorMessages.commom.rawValue)
                 }
             }else {
-                error(BEErrorMEssages.commom.rawValue)
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }
     
-    func saveNotes(token: String, notes: String, isVisible: Int) {
-        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.getDailyLog.rawValue, method: .post, parameters: ["token": token, "notes": notes, "isVisible": isVisible], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+    func addNotes(token: String, notes: String, isVisible: Int, success: @escaping (Bool) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.addNewNote.rawValue, method: .post, parameters: ["token": token, "notes": notes, "isVisible": isVisible], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if let jsonResponse = response.result.value as? [String: Any] {
+                //print("@@@", jsonResponse)
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        success(true)
+                    }else {
+                        success(false)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func updateNotes(token: String, note: User, success: @escaping (Bool) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.updateNotes.rawValue, method: .post, parameters: ["token": token, "notesId": note.id, "notes": note.notes, "isVisible": note.isNotesVisible.getRaw()], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
                 print("@@@", jsonResponse)
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        success(true)
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
+            }
+        }
+    }
+    
+    func deleteNotes(token: String, note: User, success: @escaping (Bool) -> Void, onError error: @escaping (String) -> Void) {
+        Alamofire.request(AppEndPoints.base.rawValue + AppEndPoints.deleteNotes.rawValue, method: .post, parameters: ["token": token, "notesId": note.id], encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            if let jsonResponse = response.result.value as? [String: AnyObject] {
+                if let errStat = jsonResponse["error"] as? Bool {
+                    if !errStat {
+                        success(true)
+                    }else {
+                        error(jsonResponse["data"]?["message"] as? String ?? BEErrorMessages.commom.rawValue)
+                    }
+                }else {
+                    error(BEErrorMessages.commom.rawValue)
+                }
+            }else {
+                error(BEErrorMessages.commom.rawValue)
             }
         }
     }

@@ -15,6 +15,8 @@ enum BEStoryboardID: String {
     case appointments = "AppointmentView"
     case progress = "ProgressView"
     case notes = "NotesView"
+    case addPhoto = "AddPhotoView"
+    case game = "GameView"
 }
 
 enum BECellType: String {
@@ -147,6 +149,13 @@ protocol AreaFieldReturnsDelegate {
     func didEnterValue(forCell cell: Int, fieldValue: String)
 }
 
+protocol ImagePickerDelegate {
+    func didPickImage(image: UIImage)
+}
+
+protocol NotesUpdatedDelegate {
+    func didUpdateNotes(note: User, at position: Int)
+}
 extension Bool {
     func getRaw() -> Int {
         if self {

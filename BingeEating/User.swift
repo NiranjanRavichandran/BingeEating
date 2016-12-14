@@ -10,17 +10,31 @@ import Foundation
 
 struct User {
     let id: String!
-    let notes: String!
+    var notes: String!
     let userId: String!
     var isNotesVisible: Bool!
     let username: String!
 //    let password: String!
     let role: String!
     let level: Int!
-    let supportterId: String!
+    let supporterId: String!
     let scores: Int!
     var isMessages: Bool!
     var isImageTagging: Bool!
+    
+    init() {
+        self.id = ""
+        self.notes = "New Note"
+        self.userId = ""
+        self.isNotesVisible = true
+        self.isMessages = true
+        self.isImageTagging = true
+        self.level = 0
+        self.scores = 0
+        self.supporterId = ""
+        self.role = "Participant"
+        self.username = ""
+    }
     
     
     init(jsonObject: [String: Any]) {
@@ -30,7 +44,7 @@ struct User {
         self.username = jsonObject["Username"] as? String ?? " "
         self.role = jsonObject["Role"] as? String ?? " "
         self.level = jsonObject["Level"] as? Int ?? 0
-        self.supportterId = jsonObject["SupporterId"] as? String ?? " "
+        self.supporterId = jsonObject["SupporterId"] as? String ?? " "
         self.scores = jsonObject[""] as? Int ?? 0
         self.isNotesVisible = false
         if let isVis = jsonObject["IsVisible"] as? Int {

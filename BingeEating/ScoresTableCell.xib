@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11761" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="KGk-i7-Jjw" customClass="ScoresTableCell" customModule="BingeEating" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch8-eS-W8q">
+                        <rect key="frame" x="8" y="8" width="304" height="38"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="female1" translatesAutoresizingMaskIntoConstraints="NO" id="Vh7-qF-iDE">
+                                <rect key="frame" x="-8" y="-5" width="62.5" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Vh7-qF-iDE" secondAttribute="height" multiplier="72:55" id="ac6-6k-BLH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3UH-v0-ZPG">
+                                <rect key="frame" x="62.5" y="9" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="BrD-FS-Wu2"/>
+                                    <constraint firstAttribute="height" constant="21" id="nRU-Qp-DbU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.1764705882" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPE-29-Pf4">
+                                <rect key="frame" x="254" y="8.5" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="0sJ-BO-O2f"/>
+                                    <constraint firstAttribute="height" constant="21" id="w43-T9-34b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.1764705882" green="0.18823529410000001" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3UH-v0-ZPG" firstAttribute="leading" secondItem="Vh7-qF-iDE" secondAttribute="trailing" constant="8" id="4bU-P8-XCP"/>
+                            <constraint firstAttribute="bottom" secondItem="Vh7-qF-iDE" secondAttribute="bottom" constant="-5" id="DaK-UG-da3"/>
+                            <constraint firstItem="Vh7-qF-iDE" firstAttribute="top" secondItem="Ch8-eS-W8q" secondAttribute="top" constant="-5" id="IVK-lP-MuA"/>
+                            <constraint firstItem="3UH-v0-ZPG" firstAttribute="centerY" secondItem="Ch8-eS-W8q" secondAttribute="centerY" id="Ied-rH-IBW"/>
+                            <constraint firstItem="nPE-29-Pf4" firstAttribute="centerY" secondItem="Ch8-eS-W8q" secondAttribute="centerY" id="RdJ-dB-a7R"/>
+                            <constraint firstItem="Vh7-qF-iDE" firstAttribute="leading" secondItem="Ch8-eS-W8q" secondAttribute="leading" constant="-8" id="XJs-L5-ZVi"/>
+                            <constraint firstAttribute="trailing" secondItem="nPE-29-Pf4" secondAttribute="trailing" constant="8" id="mfG-XJ-w4r"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Ch8-eS-W8q" secondAttribute="trailing" constant="8" id="Ov6-MQ-Ov3"/>
+                    <constraint firstItem="Ch8-eS-W8q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="W46-5k-hW3"/>
+                    <constraint firstItem="Ch8-eS-W8q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Zmn-be-m56"/>
+                    <constraint firstAttribute="bottom" secondItem="Ch8-eS-W8q" secondAttribute="bottom" constant="8" id="ow6-nZ-sun"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="Ch8-eS-W8q" id="a2t-xK-KUX"/>
+                <outlet property="icon" destination="Vh7-qF-iDE" id="owq-cC-78Q"/>
+                <outlet property="nameLabel" destination="3UH-v0-ZPG" id="ifi-G1-ppP"/>
+                <outlet property="scoreLabel" destination="nPE-29-Pf4" id="fax-8u-koU"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="59.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="female1" width="92" height="94"/>
+    </resources>
+</document>

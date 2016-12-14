@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate {
+class NotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate, NotesUpdatedDelegate {
 
     @IBOutlet weak var notesTableView: UITableView!
     var segmentControl: UISegmentedControl!
@@ -51,6 +51,23 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
         refreshControl.tintColor = UIColor.lightGray
         refreshControl.addTarget(self, action: #selector(self.getUserNotes), for: .valueChanged)
         self.notesTableView.addSubview(refreshControl)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addNewNote))
+    }
+    
+    func addNewNote() {
+        let newNote = User()
+        userNotes?.insert(newNote, at: 0)
+        self.notesTableView.reloadData()
+        if appdelegate.token != nil {
+            NetworkManager.sharedManager.addNotes(token: appdelegate.token!, notes: newNote.notes, isVisible: newNote.isNotesVisible.getRaw(), success: { (status) in
+                if status {
+                    print("New Note added")
+                }
+            }, onError: { (errDesc) in
+                Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+            })
+        }
     }
     
     func segmentValueChanged() {
@@ -96,6 +113,18 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func deleteNotes(note: User) {
+        if appdelegate.token != nil {
+        NetworkManager.sharedManager.deleteNotes(token: appdelegate.token!, note: note, success: { (status) in
+            if status {
+                print("Note was deleted!")
+            }
+        }, onError: { (errDesc) in
+            Utility.showAlert(withTitle: "Oops", withMessage: errDesc, from: self, type: .error)
+        })
+        }
+    }
+    
     //MARK: - TableView Datasource
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -122,13 +151,31 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
     //MARK: - TableView Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let notesDetailVC = NotesDetailViewController()
+        notesDetailVC.noteIndex = indexPath.row
         notesDetailVC.notesObject = self.userNotes?[indexPath.row]
+        notesDetailVC.notesDelegate = self
         self.show(notesDetailVC, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.deleteNotes(note: userNotes![indexPath.row])
+            userNotes?.remove(at: indexPath.row)
+        }
+        tableView.beginUpdates()
+        notesTableView.deleteRows(at: [indexPath], with: .left)
+        tableView.endUpdates()
     }
     
     //MARK: - WebView Delegate
     func webViewDidFinishLoad(_ webView: UIWebView) {
         actitvityIndicator.stopAnimating()
+    }
+    
+    //MARK: - Notes delegate
+    func didUpdateNotes(note: User, at position: Int) {
+        self.userNotes?[position] = note
+        self.notesTableView.reloadRows(at: [IndexPath(row: position, section: 0)], with: .fade)
     }
 }

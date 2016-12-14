@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503186092.95251"
+            timestampString = "503360147.27808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
             landmarkName = "postWeeklyLog(token:logId:binges:vld:physical:fv:goodDays:events:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503186092.95251"
+            timestampString = "503360147.27808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "postWeeklyLog(token:logId:binges:vld:physical:fv:goodDays:events:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503186092.95251"
+            timestampString = "503360147.27808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "postWeeklyLog(token:logId:binges:vld:physical:fv:goodDays:events:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,27 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503186092.95251"
+            timestampString = "503286444.506124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "getPhyLogs(token:date:onSuccess:onError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503186092.95251"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "postPhysicalActivity(token:activityItem:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503200591.398438"
+            timestampString = "503286444.506124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "postPhysicalActivity(token:activityItem:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +90,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BingeEating/NetworkManager.swift"
-            timestampString = "503200594.348514"
+            timestampString = "503286444.506124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "postPhysicalActivity(token:activityItem:onSuccess:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BingeEating/NetworkManager.swift"
+            timestampString = "503360147.27808"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "saveImageToServer(token:postURL:image:onSuccess:onError:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BingeEating.NetworkManager.saveImageToServer (token : Swift.String, postURL : Swift.String, image : __ObjC.UIImage, onSuccess : (Swift.Bool) -&gt; (), onError : (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "BingeEating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nravichan/Documents/iOS/BingeEating/BingeEating/NetworkManager.swift"
+                  timestampString = "503367013.886718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "380">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BingeEating.NetworkManager.(saveImageToServer (token : Swift.String, postURL : Swift.String, image : __ObjC.UIImage, onSuccess : (Swift.Bool) -&gt; (), onError : (Swift.String) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "BingeEating"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nravichan/Documents/iOS/BingeEating/BingeEating/NetworkManager.swift"
+                  timestampString = "503367013.887877"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BingeEating/NetworkManager.swift"
+            timestampString = "503360182.98307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "saveImageToServer(token:postURL:image:onSuccess:onError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BingeEating/NetworkManager.swift"
+            timestampString = "503360230.420219"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "saveImageToServer(token:postURL:image:onSuccess:onError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
